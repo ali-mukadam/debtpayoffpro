@@ -473,7 +473,7 @@ export default function Home() {
                 </h3>
                 <p className="mb-2">
                   Start by adding each of your credit cards or debts. For each debt, enter the current balance, 
-                  annual percentage rate (APR), and minimum monthly payment. You can add multiple debts using the "Add Another Debt" button.
+                  annual percentage rate (APR), and minimum monthly payment. You can add multiple debts using the &ldquo;Add Another Debt&rdquo; button.
                 </p>
                 <p className="text-sm text-gray-600">
                   <strong>Tip:</strong> You can find this information on your credit card statements or online account.
@@ -509,7 +509,7 @@ export default function Home() {
                   4. Review Your Personalized Plan
                 </h3>
                 <p className="mb-2">
-                  Click "Calculate Payoff Plan" to see your complete debt elimination strategy. You'll get a detailed breakdown 
+                  Click &ldquo;Calculate Payoff Plan&rdquo; to see your complete debt elimination strategy. You&rsquo;ll get a detailed breakdown 
                   including your payoff date, total interest savings, monthly payment schedule, and visual charts showing your progress.
                 </p>
               </div>
@@ -604,7 +604,7 @@ export default function Home() {
               <h4 className="font-semibold mb-3" style={{ color: '#FF9100' }}>💡 Pro Tip: Use Our Calculator to Compare</h4>
               <p className="text-orange-800">
                 Try both strategies with your actual debt numbers using our calculator above. 
-                You'll see exactly how much money and time each method will save you, 
+                You&rsquo;ll see exactly how much money and time each method will save you, 
                 helping you make the best decision for your situation.
               </p>
             </div>

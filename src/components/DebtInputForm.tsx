@@ -30,9 +30,6 @@ export default function DebtInputForm({ onCalculate }: DebtInputFormProps) {
   }, [debts]);
 
   const hasValidDebts = validDebts.length > 0;
-  const hasEmptyDebts = debts.some(debt => 
-    debt.balance <= 0 || debt.interestRate <= 0 || debt.minimumPayment <= 0
-  );
 
   // FIX C: Use incremental counter for unique IDs
   const addDebt = useCallback(() => {
