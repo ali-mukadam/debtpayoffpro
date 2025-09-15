@@ -5,6 +5,7 @@ import DebtInputForm from "@/components/DebtInputForm";
 import PayoffChart from "@/components/PayoffChart";
 import Logo from "@/components/Logo";
 import { Debt, PayoffStrategy, calculatePayoff, PaymentScenario, calculateTotalDebt, calculateTotalMinimumPayment } from "@/utils/calculations";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   const [results, setResults] = useState<PaymentScenario[]>([]);
