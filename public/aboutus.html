@@ -1,0 +1,223 @@
+<style>
+    body { 
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
+        line-height: 1.6; 
+        color: #333333; /* Dark text color for readability */
+    }
+    h1 { color: #00509E; }
+    h2 { color: #00509E; margin-top: 30px; }
+    h3 { color: #00509E; margin-top: 20px; }
+    p { color: #333333; } /* Ensure paragraphs are dark */
+    li { color: #333333; } /* Ensure list items are dark */
+    .hero-section { text-align: center; margin-bottom: 48px; }
+    .hero-title { font-size: 2.25rem; font-weight: bold; margin-bottom: 16px; color: #00509E; }
+    .hero-subtitle { font-size: 1.25rem; color: #6B7280; max-width: 48rem; margin: 0 auto; line-height: 1.625; }
+    .section { margin-bottom: 48px; }
+    .section-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 24px; color: #00509E; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; align-items: center; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .stats-box { background: linear-gradient(135deg, #EBF8FF 0%, #F0FDF4 100%); padding: 24px; border-radius: 8px; border: 1px solid #DBEAFE; text-align: center; }
+    .stat-number { font-size: 1.875rem; font-weight: bold; margin-bottom: 8px; color: #00509E; }
+    .stat-label { font-size: 0.875rem; color: #6B7280; margin-bottom: 16px; }
+    .stat-highlight { font-size: 1.125rem; font-weight: 600; color: #00C853; }
+    .feature-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+    .feature-icon { width: 32px; height: 32px; border-radius: 50%; background-color: #00C853; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .feature-content h3 { font-weight: 600; color: #111827; margin-bottom: 8px; }
+    .feature-content p { color: #374151; font-size: 0.875rem; }
+    .step-box { text-align: center; padding: 24px; border-radius: 8px; border: 1px solid; }
+    .step-box.blue { background-color: #EBF8FF; border-color: #DBEAFE; }
+    .step-box.green { background-color: #F0FDF4; border-color: #D1FAE5; }
+    .step-box.orange { background-color: #FFF7ED; border-color: #FED7AA; }
+    .step-number { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.25rem; color: white; }
+    .step-number.blue { background-color: #00509E; }
+    .step-number.green { background-color: #00C853; }
+    .step-number.orange { background-color: #FF9100; }
+    .impact-grid { background: linear-gradient(90deg, #EBF8FF 0%, #F0FDF4 100%); padding: 32px; border-radius: 8px; border: 1px solid #DBEAFE; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+    .impact-stat { font-size: 1.875rem; font-weight: bold; margin-bottom: 8px; }
+    .impact-stat.blue { color: #00509E; }
+    .impact-stat.green { color: #00C853; }
+    .impact-stat.orange { color: #FF9100; }
+    .impact-label { font-size: 0.875rem; color: #6B7280; margin-bottom: 8px; }
+    .impact-desc { font-size: 0.75rem; color: #9CA3AF; }
+    .disclaimer-box { background-color: #FFFBEB; padding: 24px; border-radius: 8px; border: 1px solid #FDE68A; }
+    .disclaimer-title { font-weight: 600; margin-bottom: 12px; color: #FF9100; }
+    .disclaimer-text { color: #92400E; font-size: 0.875rem; line-height: 1.625; }
+    .cta-section { text-align: center; }
+    .cta-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 16px; color: #00509E; }
+    .cta-button { padding: 12px 32px; font-size: 1.125rem; font-weight: 600; color: white; border-radius: 8px; background-color: #FF9100; border: none; cursor: pointer; }
+    .cta-button:hover { opacity: 0.9; }
+    @media (max-width: 768px) {
+        .grid-2, .grid-3, .impact-grid { grid-template-columns: 1fr; }
+        .hero-title { font-size: 1.875rem; }
+        .hero-subtitle { font-size: 1.125rem; }
+    }
+</style>
+
+<div class="hero-section">
+    <h1 class="hero-title">About DebtPayoffPro</h1>
+    <p class="hero-subtitle">
+        We're on a mission to help millions of Americans become debt-free using proven, 
+        expert-recommended strategies that save thousands in interest payments.
+    </p>
+</div>
+
+<section class="section">
+    <h2 class="section-title">Our Mission</h2>
+    <div class="grid-2">
+        <div>
+            <p><strong>Every American deserves to live debt-free.</strong> That's why we created DebtPayoffPro—a 
+            professional-grade debt elimination calculator that puts the power of expert financial strategies 
+            into your hands, completely free.</p>
+            <p>Our advanced calculator uses the same mathematical models and strategies recommended by 
+            financial advisors, but makes them accessible to everyone. No expensive consultation fees, 
+            no complex software—just proven results.</p>
+        </div>
+        <div class="stats-box">
+            <div class="stat-number">$73.6B</div>
+            <div class="stat-label">Total US credit card debt (2025)</div>
+            <div class="stat-highlight">You can be debt-free faster than you think</div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Why Choose DebtPayoffPro?</h2>
+    <div class="grid-2">
+        <div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h3>Professional-Grade Strategies</h3>
+                    <p>Choose between Debt Avalanche and Snowball methods—the same strategies recommended by certified financial planners.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h3>Advanced Mathematical Modeling</h3>
+                    <p>Our calculator uses precise compound interest formulas and payment allocation logic for accurate projections.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h3>Complete Privacy Protection</h3>
+                    <p>All calculations happen locally in your browser. We never collect, store, or transmit your financial data.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h3>Multiple Debt Management</h3>
+                    <p>Unlike basic calculators, ours handles multiple credit cards simultaneously with intelligent payment prioritization.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h3>Beautiful Visualizations</h3>
+                    <p>See your debt-free journey with intuitive charts, progress tracking, and motivational milestones.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div class="feature-content">
+                    <h3>Always Free to Use</h3>
+                    <p>No hidden fees, no premium upgrades, no credit card required. Professional debt planning should be accessible to everyone.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">How DebtPayoffPro Works</h2>
+    <div class="grid-3">
+        <div class="step-box blue">
+            <div class="step-number blue">1</div>
+            <h3>Enter Your Debts</h3>
+            <p>Add your credit cards with balances, interest rates, and minimum payments. Our secure calculator keeps all data private.</p>
+        </div>
+        <div class="step-box green">
+            <div class="step-number green">2</div>
+            <h3>Choose Your Strategy</h3>
+            <p>Select Debt Avalanche (save more money) or Snowball (build momentum). Add extra payments to accelerate your journey.</p>
+        </div>
+        <div class="step-box orange">
+            <div class="step-number orange">3</div>
+            <h3>Get Your Plan</h3>
+            <p>Instantly see your debt-free date, total interest savings, and month-by-month payment breakdown with beautiful charts.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Real Impact, Real Savings</h2>
+    <div class="impact-grid">
+        <div>
+            <div class="impact-stat blue">$4,309</div>
+            <div class="impact-label">Average Interest Savings</div>
+            <div class="impact-desc">Using Debt Avalanche vs. minimum payments on $5,000 debt</div>
+        </div>
+        <div>
+            <div class="impact-stat green">76 months</div>
+            <div class="impact-label">Faster Debt Freedom</div>
+            <div class="impact-desc">With strategic extra payments and proper method selection</div>
+        </div>
+        <div>
+            <div class="impact-stat orange">100%</div>
+            <div class="impact-label">Private & Secure</div>
+            <div class="impact-desc">All calculations happen in your browser, never stored</div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Built on Proven Financial Principles</h2>
+    <div class="grid-2">
+        <div>
+            <h3>Expert-Recommended Methods</h3>
+            <ul>
+                <li>Debt Avalanche method saves the most money mathematically</li>
+                <li>Snowball method builds psychological momentum</li>
+                <li>Both methods are recommended by certified financial planners</li>
+                <li>Extra payments create exponential acceleration</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Technical Excellence</h3>
+            <ul>
+                <li>Precise compound interest calculations</li>
+                <li>Real-time payment allocation optimization</li>
+                <li>Bank-level security and privacy protection</li>
+                <li>Modern web technology for instant results</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="disclaimer-box">
+        <h3 class="disclaimer-title">Important Educational Disclaimer</h3>
+        <p class="disclaimer-text">
+            <strong>DebtPayoffPro is for educational purposes only and does not constitute financial advice.</strong> 
+            While our calculator uses precise mathematical formulas, results are estimates based on the information you provide 
+            and may not reflect actual outcomes.
+        </p>
+        <p class="disclaimer-text">
+            <strong>Always consult with qualified financial professionals</strong> for personalized advice on your specific 
+            financial situation. We recommend speaking with a certified financial planner, credit counselor, or financial 
+            advisor before making major financial decisions.
+        </p>
+    </div>
+</section>
+
+<div class="cta-section">
+    <h3 class="cta-title">Ready to Start Your Debt-Free Journey?</h3>
+    <p>Join thousands of Americans who have used DebtPayoffPro to create their personalized debt elimination plan.</p>
+    <button class="cta-button" onclick="window.location.href = window.location.origin + window.location.pathname;">
+        Calculate Your Debt Payoff Plan
+    </button>
+</div>
