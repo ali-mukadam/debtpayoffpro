@@ -165,7 +165,7 @@ export default function Home() {
           {/* Brand Column */}
           <div className="md:col-span-1">
             <Logo width={24} height={24} textClassName="text-xl" />
-            <p className="text-gray-600 text-sm mb-4 mt-2">
+            <p className="text-gray-800 text-sm mb-4 mt-2">
               Professional debt payoff calculator helping you become debt-free faster with proven strategies.
             </p>
             <div className="flex items-center text-xs text-gray-500">
@@ -181,12 +181,12 @@ export default function Home() {
             <h4 className="font-semibold text-gray-900 mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <button onClick={scrollToCalculator} className="text-gray-600 hover:text-blue-600 transition-colors">
+                <button onClick={scrollToCalculator} className="text-gray-800 hover:text-blue-600 transition-colors">
                   Calculator
                 </button>
               </li>
               <li>
-                <button onClick={() => setCurrentPage('about')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                <button onClick={() => setCurrentPage('about')} className="text-gray-800 hover:text-blue-600 transition-colors">
                   About
                 </button>
               </li>
@@ -198,12 +198,12 @@ export default function Home() {
             <h4 className="font-semibold text-gray-900 mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <button onClick={scrollToDebtStrategies} className="text-gray-600 hover:text-blue-600 transition-colors">
+                <button onClick={scrollToDebtStrategies} className="text-gray-800 hover:text-blue-600 transition-colors">
                   Debt Avalanche Guide
                 </button>
               </li>
               <li>
-                <button onClick={scrollToDebtStrategies} className="text-gray-600 hover:text-blue-600 transition-colors">
+                <button onClick={scrollToDebtStrategies} className="text-gray-800 hover:text-blue-600 transition-colors">
                   Snowball Method
                 </button>
               </li>
@@ -215,12 +215,12 @@ export default function Home() {
             <h4 className="font-semibold text-gray-900 mb-4">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <button onClick={() => setCurrentPage('privacy')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                <button onClick={() => setCurrentPage('privacy')} className="text-gray-800 hover:text-blue-600 transition-colors">
                   Privacy Policy
                 </button>
               </li>
               <li>
-                <button onClick={() => setCurrentPage('terms')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                <button onClick={() => setCurrentPage('terms')} className="text-gray-800 hover:text-blue-600 transition-colors">
                   Terms of Service
                 </button>
               </li>
