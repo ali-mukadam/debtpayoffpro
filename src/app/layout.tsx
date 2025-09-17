@@ -11,8 +11,8 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-  title: "Free Debt Payoff Calculator | Credit Card Calculator 2025",
-  description: "Free debt payoff calculator with avalanche & snowball methods. Calculate credit card payoff strategies and save thousands in interest. Start your debt-free journey today!",
+  title: "Free Credit Card Debt Payoff Calculator 2025 | DebtPayoffPro",
+  description: "Free Credit-Card Debt Payoff Calculator. Compare Avalanche vs Snowball methods, Monthly payments and Interest Savings. Start your Debt Free journey today.",
   keywords: [
     "debt payoff calculator",
     "credit card calculator", 
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     canonical: 'https://debtpayoffpro.com',
   },
   openGraph: {
-    title: "Free Debt Payoff Calculator | Credit Card Calculator 2025",
-    description: "Free debt payoff calculator with avalanche & snowball methods. Calculate credit card payoff strategies and save thousands in interest. Start your debt-free journey today!",
+    title: "Free Credit Card Debt Payoff Calculator 2025 | DebtPayoffPro",
+    description: "Free Credit-Card Debt Payoff Calculator. Compare Avalanche vs Snowball methods, Monthly payments and Interest Savings. Start your Debt Free journey today.",
     url: 'https://debtpayoffpro.com',
     siteName: 'DebtPayoffPro',
     images: [
@@ -79,6 +79,10 @@ export const metadata: Metadata = {
     shortcut: '/logo.png',
     apple: '/logo.png',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
 };
 
 
@@ -89,7 +93,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <body className={`${inter.variable} antialiased`}>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-K51GGR26LE"
@@ -103,10 +107,67 @@ export default function RootLayout({
             gtag('config', 'G-K51GGR26LE');
           `}
         </Script>
-      </head>
-      <body
-        className={`${inter.variable} antialiased`}
-      >
+
+        {/* Structured Data */}
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "DebtPayoffPro Calculator",
+              "description": "Free Credit Card Debt Payoff Calculator. Compare Avalanche vs Snowball methods, Monthly payments and Interest Savings. Start your Debt Free journey today.",
+              "url": "https://debtpayoffpro.com",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Web Browser",
+              "browserRequirements": "Requires JavaScript",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "Free to use"
+              },
+              "featureList": [
+                "Avalanche Method Calculator",
+                "Snowball Method Calculator",
+                "Interest Savings Calculator",
+                "Monthly Payment Calculator",
+                "Debt Comparison Tools",
+                "Payoff Timeline Visualization"
+              ],
+              "screenshot": "https://debtpayoffpro.com/OGimage.png",
+              "author": {
+                "@type": "Organization",
+                "name": "DebtPayoffPro"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "DebtPayoffPro",
+                "url": "https://debtpayoffpro.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://debtpayoffpro.com/logo.png"
+                }
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "DebtPayoffPro",
+              "url": "https://debtpayoffpro.com",
+              "logo": "https://debtpayoffpro.com/logo.png",
+              "description": "Free debt payoff calculator tools and financial planning resources",
+              "foundingDate": "2025",
+              "sameAs": [
+                "https://debtpayoffpro.com"
+              ]
+            }
+          ])}
+        </Script>
+
         {children}
       </body>
     </html>
