@@ -7,7 +7,14 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
+
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 
 export const metadata: Metadata = {
@@ -78,10 +85,6 @@ export const metadata: Metadata = {
     icon: '/logo.png',
     shortcut: '/logo.png',
     apple: '/logo.png',
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
   },
 };
 
