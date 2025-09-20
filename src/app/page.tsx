@@ -10,7 +10,6 @@ export default function Home() {
   const [results, setResults] = useState<PaymentScenario[]>([]);
   const [hasCalculated, setHasCalculated] = useState(false);
   const [strategy, setStrategy] = useState<PayoffStrategy>(PayoffStrategy.AVALANCHE);
-  const [totalDebt, setTotalDebt] = useState<number>(0);
   const [extraPayment, setExtraPayment] = useState<number>(0);
   const [originalDebts, setOriginalDebts] = useState<Debt[]>([]);
   const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'privacy' | 'terms'>('home');
@@ -60,7 +59,6 @@ export default function Home() {
     setHasCalculated(true);
     setStrategy(selectedStrategy);
     setOriginalDebts(debts);
-    setTotalDebt(debts.reduce((sum, debt) => sum + debt.balance, 0));
     setExtraPayment(extra);
   };
 

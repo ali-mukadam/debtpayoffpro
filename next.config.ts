@@ -16,9 +16,6 @@ const nextConfig: NextConfig = {
     ],
   },
   
-  // Build performance optimizations
-  swcMinify: true,
-  
   // Image optimization settings
   images: {
     formats: ['image/webp', 'image/avif'],
