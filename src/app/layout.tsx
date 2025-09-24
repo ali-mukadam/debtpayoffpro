@@ -3,19 +3,17 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  preload: true, // Added preload for font
 });
-
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
 };
-
 
 export const metadata: Metadata = {
   title: "Free Credit Card Debt Payoff Calculator 2025 | DebtPayoffPro",
@@ -78,7 +76,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
- 
   category: 'finance',
   classification: 'Financial Calculator',
   icons: {
@@ -88,7 +85,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -97,9 +93,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Critical CSS for LCP optimization */}
+        {/* Critical CSS for LCP optimization - UPDATED */}
         <style dangerouslySetInnerHTML={{
           __html: `
+            /* Ensure LCP element is visible immediately */
+            .text-4xl, .text-5xl {
+              opacity: 1 !important;
+              visibility: visible !important;
+              font-family: var(--font-inter), Arial, sans-serif !important;
+              font-weight: 700;
+              color: #00509E;
+            }
+            
             /* Critical above-the-fold styles */
             .hero-container {
               min-height: 100vh;
@@ -116,6 +121,7 @@ export default function RootLayout({
               line-height: 1.2;
               margin-bottom: 1rem;
               font-family: var(--font-inter), Arial, sans-serif;
+              opacity: 1 !important;
             }
             
             .hero-subtitle {
@@ -125,41 +131,30 @@ export default function RootLayout({
               font-family: var(--font-inter), Arial, sans-serif;
             }
             
-            .form-container {
-              background: white;
-              border-radius: 0.5rem;
-              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-              padding: 2rem;
+            /* Prevent layout shifts and ensure LCP container is ready */
+            .min-h-screen {
+              min-height: 100vh;
+              background: #F4F4F4;
+              opacity: 1;
             }
             
-            /* Prevent layout shift */
+            /* Critical container styles */
+            .container {
+              width: 100%;
+              margin-left: auto;
+              margin-right: auto;
+              padding-left: 1rem;
+              padding-right: 1rem;
+              opacity: 1;
+            }
+            
             .main-container {
               min-height: 100vh;
               background: #ffffff;
+              opacity: 1;
             }
             
-            /* Critical header styles */
-            .header-container {
-              background: white;
-              box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-              border-bottom: 1px solid #e5e7eb;
-            }
-            
-            /* Critical text styles for LCP element */
-            .text-4xl {
-              font-size: 2.25rem;
-              line-height: 2.5rem;
-            }
-            
-            .text-5xl {
-              font-size: 3rem;
-              line-height: 1;
-            }
-            
-            .font-bold {
-              font-weight: 700;
-            }
-            
+            /* Critical text styles */
             .text-xl {
               font-size: 1.25rem;
               line-height: 1.75rem;
@@ -190,15 +185,11 @@ export default function RootLayout({
               text-align: center;
             }
             
-            /* Critical container styles */
-            .container {
-              width: 100%;
-              margin-left: auto;
-              margin-right: auto;
-              padding-left: 1rem;
-              padding-right: 1rem;
+            .font-bold {
+              font-weight: 700;
             }
             
+            /* Media queries for responsive containers */
             @media (min-width: 640px) {
               .container {
                 max-width: 640px;
@@ -228,18 +219,26 @@ export default function RootLayout({
                 max-width: 1536px;
               }
             }
+            
+            /* Ensure font variable is available immediately */
+            :root {
+              --font-inter: ${inter.style.fontFamily};
+            }
           `
         }} />
 
-        {/* Resource Preloading */}
+        {/* Resource Preloading - OPTIMIZED */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossOrigin="" />
+        {/* Removed manual font preload - next/font handles this automatically with preload: true */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        
+        {/* Preload critical CSS chunks */}
+        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
       </head>
       <body className={`${inter.variable} antialiased`}>
-        {/* Google Analytics */}
+        {/* Google Analytics - DEFERRED */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-K51GGR26LE"
           strategy="afterInteractive"
@@ -249,69 +248,73 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-K51GGR26LE');
+            gtag('config', 'G-K51GGR26LE', {
+              page_title: document.title,
+              page_location: window.location.href
+            });
           `}
         </Script>
 
-        {/* Structured Data */}
+        {/* Structured Data - DEFERRED */}
         <Script
           id="structured-data"
           type="application/ld+json"
           strategy="afterInteractive"
-        >
-          {JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "DebtPayoffPro Calculator",
-              "description": "Free Credit Card Debt Payoff Calculator. Compare Avalanche vs Snowball methods, Monthly payments and Interest Savings. Start your Debt Free journey today.",
-              "url": "https://debtpayoffpro.com",
-              "applicationCategory": "FinanceApplication",
-              "operatingSystem": "Web Browser",
-              "browserRequirements": "Requires JavaScript",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "description": "Free to use"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "name": "DebtPayoffPro Calculator",
+                "description": "Free Credit Card Debt Payoff Calculator. Compare Avalanche vs Snowball methods, Monthly payments and Interest Savings. Start your Debt Free journey today.",
+                "url": "https://debtpayoffpro.com",
+                "applicationCategory": "FinanceApplication",
+                "operatingSystem": "Web Browser",
+                "browserRequirements": "Requires JavaScript",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                  "description": "Free to use"
+                },
+                "featureList": [
+                  "Avalanche Method Calculator",
+                  "Snowball Method Calculator",
+                  "Interest Savings Calculator",
+                  "Monthly Payment Calculator",
+                  "Debt Comparison Tools",
+                  "Payoff Timeline Visualization"
+                ],
+                "screenshot": "https://debtpayoffpro.com/OGimage.png",
+                "author": {
+                  "@type": "Organization",
+                  "name": "DebtPayoffPro"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "DebtPayoffPro",
+                  "url": "https://debtpayoffpro.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://debtpayoffpro.com/logo.png"
+                  }
+                }
               },
-              "featureList": [
-                "Avalanche Method Calculator",
-                "Snowball Method Calculator",
-                "Interest Savings Calculator",
-                "Monthly Payment Calculator",
-                "Debt Comparison Tools",
-                "Payoff Timeline Visualization"
-              ],
-              "screenshot": "https://debtpayoffpro.com/OGimage.png",
-              "author": {
-                "@type": "Organization",
-                "name": "DebtPayoffPro"
-              },
-              "publisher": {
+              {
+                "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "DebtPayoffPro",
                 "url": "https://debtpayoffpro.com",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://debtpayoffpro.com/logo.png"
-                }
+                "logo": "https://debtpayoffpro.com/logo.png",
+                "description": "Free debt payoff calculator tools and financial planning resources",
+                "foundingDate": "2025",
+                "sameAs": [
+                  "https://debtpayoffpro.com"
+                ]
               }
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "DebtPayoffPro",
-              "url": "https://debtpayoffpro.com",
-              "logo": "https://debtpayoffpro.com/logo.png",
-              "description": "Free debt payoff calculator tools and financial planning resources",
-              "foundingDate": "2025",
-              "sameAs": [
-                "https://debtpayoffpro.com"
-              ]
-            }
-          ])}
-        </Script>
+            ])
+          }}
+        />
 
         {children}
       </body>
