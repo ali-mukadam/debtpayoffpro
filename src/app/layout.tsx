@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://debtpayoffpro.com'),
+  metadataBase: new URL('https://www.debtpayoffpro.com'),
   alternates: {
-    canonical: 'https://debtpayoffpro.com',
+    canonical: 'https://www.debtpayoffpro.com',
   },
   openGraph: {
     title: "Free Credit Card Debt Payoff Calculator 2025 | DebtPayoffPro",
     description: "Free Credit-Card Debt Payoff Calculator. Compare Avalanche vs Snowball methods, Monthly payments and Interest Savings. Start your Debt Free journey today.",
-    url: 'https://debtpayoffpro.com',
+    url: 'https://www.debtpayoffpro.com',
     siteName: 'DebtPayoffPro',
     images: [
       {
@@ -267,7 +267,7 @@ export default function RootLayout({
                 "@type": "WebApplication",
                 "name": "DebtPayoffPro Calculator",
                 "description": "Free Credit Card Debt Payoff Calculator. Compare Avalanche vs Snowball methods, Monthly payments and Interest Savings. Start your Debt Free journey today.",
-                "url": "https://debtpayoffpro.com",
+                "url": "https://www.debtpayoffpro.com",
                 "applicationCategory": "FinanceApplication",
                 "operatingSystem": "Web Browser",
                 "browserRequirements": "Requires JavaScript",
@@ -285,7 +285,7 @@ export default function RootLayout({
                   "Debt Comparison Tools",
                   "Payoff Timeline Visualization"
                 ],
-                "screenshot": "https://debtpayoffpro.com/OGimage.png",
+                "screenshot": "https://www.debtpayoffpro.com/OGimage.png",
                 "author": {
                   "@type": "Organization",
                   "name": "DebtPayoffPro"
@@ -293,10 +293,10 @@ export default function RootLayout({
                 "publisher": {
                   "@type": "Organization",
                   "name": "DebtPayoffPro",
-                  "url": "https://debtpayoffpro.com",
+                  "url": "https://www.debtpayoffpro.com",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://debtpayoffpro.com/logo.png"
+                    "url": "https://www.debtpayoffpro.com/logo.png"
                   }
                 }
               },
@@ -304,12 +304,12 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "DebtPayoffPro",
-                "url": "https://debtpayoffpro.com",
-                "logo": "https://debtpayoffpro.com/logo.png",
+                "url": "https://www.debtpayoffpro.com",
+                "logo": "https://www.debtpayoffpro.com/logo.png",
                 "description": "Free debt payoff calculator tools and financial planning resources",
                 "foundingDate": "2025",
                 "sameAs": [
-                  "https://debtpayoffpro.com"
+                  "https://www.debtpayoffpro.com"
                 ]
               }
             ])
