@@ -1,10 +1,20 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import DebtInputForm from "@/components/DebtInputForm";
-import PayoffChart from "@/components/PayoffChart";
+import dynamic from 'next/dynamic';
 import Logo from "@/components/Logo";
 import { Debt, PayoffStrategy, calculatePayoff, PaymentScenario, calculateTotalDebt, calculateTotalMinimumPayment } from "@/utils/calculations";
+
+// Dynamic imports for heavy components to improve LCP
+const DebtInputForm = dynamic(() => import("@/components/DebtInputForm"), {
+  ssr: false,
+  loading: () => <div className="text-center py-8"><p className="text-gray-600">Loading calculator...</p></div>,
+});
+
+const PayoffChart = dynamic(() => import("@/components/PayoffChart"), {
+  ssr: false,
+  loading: () => <div className="h-80 flex items-center justify-center"><p className="text-gray-600">Loading chart...</p></div>,
+});
 
 export default function Home() {
   const [results, setResults] = useState<PaymentScenario[]>([]);

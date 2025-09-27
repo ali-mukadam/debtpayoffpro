@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Enable SWC-based minification for smaller JS bundles
+  swcMinify: true,
+
   // Production optimizations
   compiler: {
     // Remove console.log statements in production
@@ -14,8 +17,14 @@ const nextConfig: NextConfig = {
       'recharts',
       'lucide-react'
     ],
+
+    // Automatically extract and inline critical CSS
+    optimizeCss: true,
   },
   
+  // Remove the "X-Powered-By" header for tiny savings
+  poweredByHeader: false,
+
   // Image optimization settings
   images: {
     formats: ['image/webp', 'image/avif'],

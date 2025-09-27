@@ -220,10 +220,7 @@ export default function RootLayout({
               }
             }
             
-            /* Ensure font variable is available immediately */
-            :root {
-              --font-inter: ${inter.style.fontFamily};
-            }
+            
           `
         }} />
 
@@ -235,15 +232,17 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         
         {/* Preload critical CSS chunks */}
-        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
+       
       </head>
       <body className={`${inter.variable} antialiased`}>
-        {/* Google Analytics - DEFERRED */}
+        {children}
+
+        {/* Google Analytics - NOW LOADS AFTER CONTENT */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-K51GGR26LE"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -255,11 +254,11 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Structured Data - DEFERRED */}
+        {/* Structured Data - Also moved to load after content */}
         <Script
           id="structured-data"
           type="application/ld+json"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify([
               {
@@ -315,8 +314,6 @@ export default function RootLayout({
             ])
           }}
         />
-
-        {children}
       </body>
     </html>
   );
