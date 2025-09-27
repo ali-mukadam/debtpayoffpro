@@ -19,7 +19,6 @@ const PayoffChart = dynamic(() => import("@/components/PayoffChart"), {
 export default function Home() {
   const [results, setResults] = useState<PaymentScenario[]>([]);
   const [hasCalculated, setHasCalculated] = useState(false);
-  const [strategy, setStrategy] = useState<PayoffStrategy>(PayoffStrategy.AVALANCHE);
   const [extraPayment, setExtraPayment] = useState<number>(0);
   const [originalDebts, setOriginalDebts] = useState<Debt[]>([]);
   const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'privacy' | 'terms'>('home');
@@ -67,7 +66,6 @@ export default function Home() {
     const scenarios = calculatePayoff(debts, selectedStrategy, extra);
     setResults(scenarios);
     setHasCalculated(true);
-    setStrategy(selectedStrategy);
     setOriginalDebts(debts);
     setExtraPayment(extra);
   };
