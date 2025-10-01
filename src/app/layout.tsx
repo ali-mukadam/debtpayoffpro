@@ -7,7 +7,7 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-  preload: true, // Added preload for font
+  preload: true,
 });
 
 export const viewport = {
@@ -79,9 +79,16 @@ export const metadata: Metadata = {
   category: 'finance',
   classification: 'Financial Calculator',
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' }
+    ],
+    apple: '/apple-touch-icon.png',
+    other: [
+      { rel: 'icon', url: '/android-chrome-192x192.png', sizes: '192x192' },
+      { rel: 'icon', url: '/android-chrome-512x512.png', sizes: '512x512' }
+    ],
   },
 };
 
@@ -93,6 +100,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        
         {/* Critical CSS for LCP optimization - UPDATED */}
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -219,21 +234,14 @@ export default function RootLayout({
                 max-width: 1536px;
               }
             }
-            
-            
           `
         }} />
 
         {/* Resource Preloading - OPTIMIZED */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        {/* Removed manual font preload - next/font handles this automatically with preload: true */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="icon" href="/favicon.ico" />
-        
-        {/* Preload critical CSS chunks */}
-       
       </head>
       <body className={`${inter.variable} antialiased`}>
         {children}

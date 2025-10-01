@@ -5,6 +5,11 @@ import dynamic from 'next/dynamic';
 import Logo from "@/components/Logo";
 import { Debt, PayoffStrategy, calculatePayoff, PaymentScenario, calculateTotalDebt, calculateTotalMinimumPayment } from "@/utils/calculations";
 
+// Add this to the top of your page.tsx file after imports
+export const metadata = {
+  description: "Free Credit-Card Debt Payoff Calculator. Compare Avalanche vs Snowball Methods, Monthly Payments and Interest Savings. Start your Debt Free journey today."
+};
+
 // Dynamic imports for heavy components to improve LCP
 const DebtInputForm = dynamic(() => import("@/components/DebtInputForm"), {
   ssr: false,
