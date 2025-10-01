@@ -230,6 +230,7 @@ export default function RootLayout({
         {/* Removed manual font preload - next/font handles this automatically with preload: true */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="icon" href="/favicon.ico" />
         
         {/* Preload critical CSS chunks */}
        
